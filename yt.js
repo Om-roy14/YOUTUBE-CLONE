@@ -19,3 +19,22 @@ box.addEventListener("click", (e)=>{
 document.addEventListener("click", ()=>{
     box.classList.remove("active");
 });
+
+const cards = document.querySelectorAll(".shorts");
+
+cards.forEach(card=>{
+  const video = card.querySelector("video");
+  let timer;
+
+  card.addEventListener("mouseenter", ()=>{
+    timer = setTimeout(()=>{
+      video.play();
+    }, 300); // delay like YouTube
+  });
+
+  card.addEventListener("mouseleave", ()=>{
+    clearTimeout(timer);
+    video.pause();
+    video.currentTime = 0;
+  });
+});

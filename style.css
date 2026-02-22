@@ -1,4 +1,5 @@
 *{
+    font-family: Arial, Helvetica, sans-serif;
      margin: 0px;
      padding: 0px;
      box-sizing: border-box;
@@ -10,6 +11,7 @@ body{
 .navbar{
     width:100vw ;
     height: 56px;
+    position: fixed;
     background-color: #000000;
     display: flex;
     /* justify-content: space-evenly; */
@@ -383,11 +385,124 @@ body{
 
 .content {
   margin-left: 70px;
-  padding: 20px;
+  padding: 10px;
   color: white;
   transition: margin-left 0.3s ease;
 }
 
 .content.shift {
   margin-left: 220px;
+}
+/* =========================================================
+   TOP HEADER – YOUTUBE STYLE SCROLLABLE
+========================================================= */
+
+.top-header {
+  margin-top: 40px;
+  margin-left: 20px;
+  position: fixed;
+    width: 100%;
+    height: 56px;
+    background-color: rgb(0, 0, 0);
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;                 /* spacing between boxes */
+    padding: 0 20px;           /* left-right spacing */
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;       /* prevents wrapping */
+    scroll-behavior: smooth;
+
+    -ms-overflow-style: none;  /* hide scrollbar (IE) */
+      /* hide scrollbar (Firefox) */
+}
+
+.top-header::-webkit-scrollbar {
+    display: none;             /* hide scrollbar (Chrome) */
+}
+
+.boxes {
+    flex-shrink: 0;            /* prevents shrinking */
+    height: 32px;
+    padding: 8px 14px;
+    background-color: rgb(39, 41, 39);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+}
+/* =========================================================
+   video
+========================================================= */
+.content{
+  height: auto;
+  width: auto;
+}
+
+.video {
+  width: 100%;
+  min-height: 100%;
+
+  display: grid;
+
+  padding: 30px;
+
+  grid-template-columns: repeat(3, 1fr);  /* EXACTLY 3 columns */
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+.shorts{
+  margin-top: 100px;
+  width: 370px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.preview-video{
+    width: 100%;
+   height: 200px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+  
+}
+.description{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+.creator-logo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+}
+.creator-name{
+  display: flex;
+  align-items: center;
+  
+}
+.creator-name p{
+  padding-right: 5px;
+  
+}
+#creator-tick{
+
+  width: 16px;
+  font-size: 16px;
+  color: white;
+}
+.about-video{
+  color: #000000;
+  line-height: 25px;
+  color: white;
 }
